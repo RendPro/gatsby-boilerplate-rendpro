@@ -1,27 +1,40 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Boilerplate RendPro",
+    title: 'Gatsby Boilerplate RendPro',
   },
   plugins: [
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-image",
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-image',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-alias-imports',
       options: {
-        trackingId: "x",
+        aliases: {
+          '@theme': 'src/theme',
+          '@templates': 'src/templates',
+          '@components': 'src/components',
+          '@assets': 'src/assets',
+          '@hooks': 'src/hooks',
+          '@utils': 'src/utils',
+        },
       },
     },
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    // {
+    //   resolve: "gatsby-plugin-google-analytics",
+    //   options: {
+    //     trackingId: "x",
+    //   },
+    // },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: 'images',
+        path: './src/assets/',
       },
-      __key: "images",
+      __key: 'images',
     },
   ],
 };
